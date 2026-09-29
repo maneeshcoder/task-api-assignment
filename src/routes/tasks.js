@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) => {
   res.status(204).send();
 });
 
-
+// Assign a task only if it exists and does not already have an assignee.
 router.patch('/:id/assign', (req, res) => {
   const error = validateAssignTask(req.body);
 
@@ -70,10 +70,12 @@ router.patch('/:id/assign', (req, res) => {
 
   const existingTask = taskService.findById(req.params.id);
 
+  
   if (!existingTask) {
     return res.status(404).json({ error: 'Task not found' });
   }
 
+  // Prevent a task from being reassigned once an assignee is set.
   if (existingTask.assignee !== undefined) {
     return res.status(409).json({
       error: 'Task is already assigned',

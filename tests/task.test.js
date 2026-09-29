@@ -283,6 +283,7 @@ describe("PATCH /tasks/:id/complete", () => {
   });
 });
 
+// Assignment endpoint tests cover the happy path and validation edge cases.
 describe("PATCH /tasks/:id/assign", () => {
   test("should assign a task to a user", async () => {
     const created = taskService.create({ title: "Task to assign" });

@@ -1,5 +1,6 @@
 const taskService = require("../src/services/taskService");
 
+// Reset the in-memory task store so each test starts with clean data.
 beforeEach(() => {
   taskService._reset();
 });
