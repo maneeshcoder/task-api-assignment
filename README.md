@@ -157,8 +157,8 @@ For a production version, I would consider adding persistent database storage, a
 
 ### Live API
 
-Add your deployed API URL here.
+https://task-api-assignment-rzvb.onrender.com
 
 ### GitHub Repository
 
-Add your repository URL here.
+https://github.com/maneeshcoder/task-api-assignment.git
